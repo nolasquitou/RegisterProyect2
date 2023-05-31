@@ -19,26 +19,27 @@
     </button>
 
     <!-- Modal -->
-    
+
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header text-white">
                     <h1 class="modal-title fs-5 w-100 text-center" id="staticBackdropLabel">REGISTRATE</h1>
-                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-color-modal">
-                    <form>
+                    <form onsubmit="regiterHandler(event)">
                         <div class="mb-3">
                             <label for="exampleInputName" class="form-label">Nombre</label>
                             <input type="text" class="text-white w-100 border-top-0 border-end-0 border-start-0"
-                                id="InputName" required>
+                                id="InputName">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputApellido" class="form-label">Apellido</label>
                             <input type="text" class="text-white w-100 border-top-0 border-end-0 border-start-0"
-                                id="InputApellido" required>
+                                id="InputApellido">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail" class="form-label">Correo Electronico</label>
@@ -50,16 +51,23 @@
                             <input type="password" class="text-white w-100 border-top-0 border-end-0 border-start-0"
                                 id="InputPassword">
                         </div>
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <p class="warnings" id="textInfo"></p>
+                        </div>
                         <div class="redes d-flex justify-content-center flex-column mb-5 w-100 text-center">
                             <h6 class="mb-4">Registrate con:</h6>
                             <div class="logo d-flex justify-content-around">
-                                <div class="primera-img"><a href="" class="img-logo d-flex justify-content-center"><img src="imgRegister/facebook.png" style="width: 70px;" alt="..."></a></div>
-                                <a href="" class="img-logo d-flex justify-content-center"><img src="imgRegister/instagram.png" style="width: 70px;" alt="..."></a>
-                                <a href="" class="img-logo d-flex justify-content-center"><img src="imgRegister/gorjeo.png" style="width: 70px;" alt="..."></a>
+                                <div class="primera-img"><a href="" class="img-logo d-flex justify-content-center"><img
+                                            src="imgRegister/facebook.png" style="width: 70px;" alt="..."></a></div>
+                                <a href="" class="img-logo d-flex justify-content-center"><img
+                                        src="imgRegister/instagram.png" style="width: 70px;" alt="..."></a>
+                                <a href="" class="img-logo d-flex justify-content-center"><img
+                                        src="imgRegister/gorjeo.png" style="width: 70px;" alt="..."></a>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary mt-3 ms-2" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary mt-3 ms-2"
+                                data-bs-dismiss="modal">Cerrar</button>
                             <button type="submit" class="btn btn-primary mt-3 ms-2">Enviar</button>
                         </div>
                     </form>

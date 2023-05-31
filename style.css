@@ -27,3 +27,8 @@ img:hover {
 .text-color-modal{
     color: #f0e78e;
 }
+.warnings{
+    color: rgb(158, 34, 34);
+    text-decoration:underline;
+    margin-bottom: 3px;
+}
