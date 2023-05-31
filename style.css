@@ -1,0 +1,29 @@
+input{
+    outline: none;
+    border: 1px solid rgb(199, 196, 196);
+    background-color: #00b2b3;
+}
+input:hover{
+    border-bottom: 1px solid rgb(29, 118, 96);
+    transition: 0.3s;
+}
+img:hover {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    z-index: 2;
+}
+.btn-style{
+    color: rgb(63, 225, 184);
+}
+.modal-body{
+    background-color: #00b2b3;
+}
+.modal-header{
+    background-color: #007f80;
+}
+.text-color-modal{
+    color: #f0e78e;
+}
