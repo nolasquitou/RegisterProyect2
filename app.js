@@ -9,6 +9,8 @@ function regiterHandler(e) {
     const expreEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     let warnings = ""
     let verific = false
+    const exprePass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
     const datos = {
         Nombre: nameHTML.value,
         Apellido: apellidoHTML.value,
@@ -26,36 +28,37 @@ function regiterHandler(e) {
                 textInfo.innerHTML = warnings
             }
         } else {
-            if (key == "Nombre") {
-                if (nameHTML.value.length < 4) {
-                    warnings += `El ombre es muy corto <br>`
-                    verific = true
-                }
-            }
-            if (key == "Nombre") {
-                if (nameHTML.value.length < 4) {
-                    warnings += `El ombre es muy corto <br>`
-                    verific = true
-                }
-            }
             if (key == "Email") {
-                console.log(element);
-                if (expreEmail.test(emailHTML.value)) {
-                    console.log("email si");
-                } else {
-                    warnings += `El Email no es validp <br>`
+                if (!expreEmail.test(emailHTML.value)) {
+                    warnings += `El Email no es valido <br>`
                     verific = true
                 }
             }
             if (key == "Contraseña") {
-                if (passHTML.value.length < 6) {
-                    warnings += `La Contraseña es muy corta <br>`
-                    verific = true
+                if (!exprePass.test(element)) {
+                    if (passHTML.value.length < 8) {
+                        warnings += "La contraseña debe tener al menos 8 caracteres.";
+                        verific = true
+                    } else if (!/(?=.*[a-z])/.test(element)) {
+                        warnings += "La contraseña debe contener al menos una letra minúscula.";
+                        verific = true
+                    } else if (!/(?=.*[A-Z])/.test(element)) {
+                        warnings += "La contraseña debe contener al menos una letra mayúscula.";
+                        verific = true
+                    } else if (!/(?=.*\d)/.test(element)) {
+                        warnings += "La contraseña debe contener al menos un dígito.";
+                        verific = true
+                    } else if (!/(?=.*[@$!%*?&])/.test(element)) {
+                        warnings += `La contraseña debe contener al menos un carácter especial (@, $, !, %, *, ?, &).`;
+                        verific = true
+                    }
                 }
             }
 
             if (verific) {
                 textInfo.innerHTML = warnings
+            } else {
+                textInfo.innerHTML = ""
             }
         }
 
